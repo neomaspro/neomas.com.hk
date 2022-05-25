@@ -15,36 +15,10 @@
     <script class="u-script" type="text/javascript" src="fnon.min.js" defer=""></script>
     <meta name="generator" content="Nicepage 3.25.0, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
-    
+
     <link rel="icon" href="images/nm-logo.png">
 
-    <script>
-      function validateInput() {
-    
-        var errorStr="";
-        if(document.getElementById('name').value==null || document.getElementById('name').value=="") {
-          errorStr += 'Name<BR>';
-        }
-        if(document.getElementById('email').value==null || document.getElementById('email').value=="") {
-          errorStr += 'Email<BR>';
-        }
-        if(document.getElementById('enquiry').value==null || document.getElementById('enquiry').value=="") {
-          errorStr += 'Message';
-        }
-        if(errorStr!="") {
-          Fnon.Alert.Dark(errorStr,'The following field(s) are missing.','Ok',()=>{});
-          //alert(errorStr);
-          return false;
-        }
-        return true;
-      }
-    </script>
-    
-    
-    
-    
-    
-    
+
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
@@ -171,7 +145,7 @@
                   <div class="u-container-layout u-container-layout-2">
                     <h5 class="u-text u-text-3"> Connectivity
 &amp; Data Feed</h5>
-                    <p class="u-align-left u-text u-text-4"> Connect with exchanges, 
+                    <p class="u-align-left u-text u-text-4"> Connect with exchanges,
 brokers, data providers via various interface such as FIX,&nbsp; REST API, Web socket etc.</p>
                   </div>
                 </div>
@@ -195,8 +169,8 @@ Trading Engine<br>
                   <div class="u-container-layout u-container-layout-6">
                     <h5 class="u-text u-text-7"> Hedging
 Engine</h5>
-                    <p class="u-align-left u-text u-text-8">Monitor the market in realtime and execute hedging strategy 
-based on current position 
+                    <p class="u-align-left u-text u-text-8">Monitor the market in realtime and execute hedging strategy
+based on current position
 and risk limit.</p>
                   </div>
                 </div>
@@ -274,8 +248,8 @@ inventory.</p>
                   <div class="u-container-layout u-container-layout-6">
                     <h5 class="u-text u-text-7"> Corporate
 Event Module&nbsp;&nbsp;</h5>
-                    <p class="u-text u-text-8"> Handle the material 
-change on the equity and 
+                    <p class="u-text u-text-8"> Handle the material
+change on the equity and
 derivatives arise from corporate
 actions, e.g. stock split.</p>
                   </div>
@@ -288,7 +262,7 @@ actions, e.g. stock split.</p>
                   <div class="u-container-layout u-container-layout-8">
                     <h5 class="u-text u-text-9"> Margin
 Calculation Engine</h5>
-                    <p class="u-text u-text-10"> Calculate and simulate 
+                    <p class="u-text u-text-10"> Calculate and simulate
 margin requirements for
 cross-asset portfolio based on different rules and models.</p>
                   </div>
@@ -416,8 +390,8 @@ Automation</h5>
 		c0,1.079,0.483,2.085,1.311,2.765c0.825,3.11,2.854,5.46,3.644,6.285v2.743c0,0.787-0.428,1.509-1.171,1.915l-6.653,4.173
 		C1.583,48.134,0,50.801,0,53.703V57.5h12.5v-4.238C12.5,49.409,14.601,45.87,17.983,44.025z"></path>
 </g></svg>
-            
-            
+
+
           </span>
                 <h5 class="u-align-center u-text u-text-default u-text-2">Professionals
 with 20+ years experience in global markets</h5>
@@ -532,7 +506,8 @@ Trading Strategy&nbsp;&nbsp;&nbsp;<br>
                             <textarea placeholder="Enter your Message" rows="4" cols="50" id="message-e2a4" name="message" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required=""></textarea>
                           </div>
                           <div class="u-form-group u-form-submit">
-                            <a href="#" onclick="if(validateInput()){document.getElementById('enquiry_form').submit();return false;}" class="u-btn u-btn-submit u-button-style u-palette-2-base u-btn-1">Submit</a>
+                            <a href="#"
+                              onclick="if(validateInput()){submitData();}" class="u-btn u-btn-submit u-button-style u-palette-2-base u-btn-1">Submit</a>
                           </div>
                           <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
                         </form>
@@ -546,11 +521,66 @@ Trading Strategy&nbsp;&nbsp;&nbsp;<br>
         </div>
       </div>
     </section>
-    
-    
+
+
     <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-2a92"><div class="u-clearfix u-sheet u-sheet-1">
         <p class="u-small-text u-text u-text-variant u-text-1"> © 2022 ​NeoMas Professional Services Limited.&nbsp;<br>All rights reserved.
         </p>
       </div></footer>
+
+    <script>
+      function validateInput() {
+        var name = document.getElementById('name-e2a4');
+        var email = document.getElementById('email-e2a4');
+        var message = document.getElementById('message-e2a4');
+
+        var errorStr="";
+        if(!name.value) {
+          errorStr += 'Name<BR>';
+        }
+        if(!email.value) {
+          errorStr += 'Email<BR>';
+        }
+        if(!message.value) {
+          errorStr += 'Message';
+        }
+        if(errorStr!="") {
+          Fnon.Alert.Dark(errorStr,'The following field(s) are missing.','Ok',()=>{});
+          //alert(errorStr);
+          return false;
+        }
+        return true;
+      }
+
+      function submitData() {
+        var name = document.getElementById('name-e2a4');
+        var email = document.getElementById('email-e2a4');
+        var message = document.getElementById('message-e2a4');
+
+        var settings = {
+          "url": "https://us-central1-neomas-faa1c.cloudfunctions.net/contactUs",
+          "method": "POST",
+          "timeout": 0,
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          },
+          "data": JSON.stringify({
+            "email": email.value,
+            "name": name.value,
+            "message": message.value
+          }),
+        };
+
+        $.ajax(settings).done(function (response) {
+          Fnon.Alert.Dark('The message have been submitted','Info', 'Ok', ()=>{});
+          name.value = ''
+          email.value = ''
+          message.value = ''
+        });
+
+        return false;
+    }
+    </script>
   </body>
 </html>
